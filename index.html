@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Progress Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Teacher Progress Tracker</h1>
+            <p class="subtitle">Simple observations. Clean progress sheets. No Excel needed.</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <h2>Add Observation</h2>
+                <form id="observation-form">
+                    <div class="form-group">
+                        <label for="student-name">Student Name *</label>
+                        <input type="text" id="student-name" required placeholder="Enter student's name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observation-date">Date *</label>
+                        <input type="date" id="observation-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observation-type">Observation Type *</label>
+                        <select id="observation-type" required>
+                            <option value="">Select type...</option>
+                            <option value="academic">Academic Progress</option>
+                            <option value="behavior">Behavior</option>
+                            <option value="participation">Participation</option>
+                            <option value="social">Social Skills</option>
+                            <option value="strength">Strength/Interest</option>
+                            <option value="concern">Area of Concern</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="observation-notes">Notes *</label>
+                        <textarea id="observation-notes" required rows="4" placeholder="What did you observe? Be specific and objective."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Save Observation</button>
+                </form>
+            </section>
+
+            <!-- Progress Sheet Section -->
+            <section class="progress-section">
+                <div class="section-header">
+                    <h2>Progress Sheets</h2>
+                    <div class="controls">
+                        <select id="student-filter">
+                            <option value="">All Students</option>
+                        </select>
+                        <button id="print-btn" class="btn-secondary">Print Selected</button>
+                        <button id="clear-btn" class="btn-danger">Clear All</button>
+                    </div>
+                </div>
+
+                <div id="progress-sheets" class="progress-sheets">
+                    <p class="empty-state">No observations yet. Add your first observation above.</p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
